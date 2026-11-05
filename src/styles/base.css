@@ -1,0 +1,59 @@
+/* Colours come from the generated /theme.css (see src/theme). This file holds only non-colour tokens, and never a hex value. */
+:root {
+  --radius: 8px;
+  --radius-sm: 5px;
+  --font-sans: 'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Segoe UI Symbol', 'Apple Symbols', sans-serif;
+  --font-display: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Segoe UI Symbol', monospace;
+  --ease: 140ms cubic-bezier(0.25, 1, 0.5, 1);
+  --header-h: 60px;
+  /* one z-index scale, so nothing needs a magic number */
+  --z-sticky: 20;
+  --z-header: 40;
+  --z-menu: 60;
+  --z-sheet: 70;
+}
+*, *::before, *::after { box-sizing: border-box; }
+/* scrollbars: thin, quiet, in the site's colours, with no arrow buttons (standard properties first, WebKit as the fallback) */
+* { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--text-muted) 50%, transparent) transparent; }
+html:hover, .dd-list:hover, .table-scroll:hover, pre.code:hover, .dx-tabs:hover { scrollbar-color: var(--text-muted) transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track, *::-webkit-scrollbar-corner { background: transparent; }
+*::-webkit-scrollbar-button { display: none; }
+*::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--text-muted) 50%, transparent); border: 2px solid transparent; background-clip: content-box; border-radius: 8px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--text-muted); background-clip: content-box; }
+html { color-scheme: var(--color-scheme, light); -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 16px); background: var(--bg); }
+body { margin: 0; color: var(--text); background: var(--bg); font-family: var(--font-sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
+h1, h2, h3, h4 { margin: 0 0 0.5em; text-wrap: balance; }
+h1, h2 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.015em; line-height: 1.1; }
+h1 { font-size: clamp(2.1rem, 1.3rem + 3vw, 3.5rem); }
+h2 { font-size: clamp(1.45rem, 1.2rem + 0.9vw, 1.9rem); }
+h3 { font-size: 1rem; font-weight: 700; line-height: 1.35; }
+p { margin: 0 0 1em; text-wrap: pretty; }
+a { color: var(--accent-link); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: 0.5; }
+input { font: inherit; color: inherit; }
+input::placeholder { color: var(--text-muted); opacity: 1; }
+input[type='search']::-webkit-search-cancel-button { display: none; }
+img, svg { max-width: 100%; }
+code, pre, kbd { font-family: var(--font-mono); font-size: 0.92em; }
+:not(pre) > code { background: var(--surface-2); padding: 0.1em 0.36em; border-radius: 4px; }
+kbd { border: 1px solid var(--border-strong); border-bottom-width: 2px; border-radius: 4px; padding: 0 6px; font-size: 0.75rem; color: var(--text-muted); background: var(--surface); }
+ul, ol { padding-left: 1.3em; margin: 0 0 1em; }
+li { margin: 0.2em 0; }
+hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.skip-link { position: absolute; left: 12px; top: -56px; background: var(--accent); color: var(--accent-fg); padding: 8px 14px; border-radius: var(--radius); z-index: var(--z-sheet); transition: top var(--ease); }
+.skip-link:focus { top: 12px; }
+.container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.narrow { max-width: 760px; }
+.page { padding-top: 44px; padding-bottom: 90px; }
+.muted { color: var(--text-muted); }
+.small { font-size: 0.875rem; }
+.num { font-variant-numeric: tabular-nums; }
+.lead { font-size: 1.12rem; color: var(--text-muted); max-width: 62ch; margin-top: 0.4em; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }

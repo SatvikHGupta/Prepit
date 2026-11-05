@@ -1,0 +1,31 @@
+// One small definition per accent: id, name and three shades per mode.
+//   primary = fills (buttons, toggles)   hover = pressed state   link = the accent used as text
+// Rule of thumb: light mode uses 700-800 shades, dark mode 500 for fills and 300-400 for text.
+export const ACCENTS = [
+  { id: 'teal', name: 'Teal',
+    dark: { primary: '#14b8a6', hover: '#2dd4bf', link: '#5eead4' }, light: { primary: '#0f6b5c', hover: '#0b5448', link: '#0f6b5c' } },
+  { id: 'blue', name: 'Blue',
+    dark: { primary: '#3b82f6', hover: '#60a5fa', link: '#93c5fd' }, light: { primary: '#1d4ed8', hover: '#1e40af', link: '#1d4ed8' } },
+  { id: 'indigo', name: 'Indigo',
+    dark: { primary: '#5b5ef0', hover: '#4b4ee3', link: '#a5b4fc' }, light: { primary: '#4338ca', hover: '#3730a3', link: '#4338ca' } },
+  { id: 'violet', name: 'Violet',
+    dark: { primary: '#8b5cf6', hover: '#a78bfa', link: '#c4b5fd' }, light: { primary: '#6d28d9', hover: '#5b21b6', link: '#6d28d9' } },
+  { id: 'pink', name: 'Pink',
+    dark: { primary: '#ec4899', hover: '#f472b6', link: '#f9a8d4' }, light: { primary: '#be185d', hover: '#9d174d', link: '#be185d' } },
+  { id: 'rose', name: 'Rose',
+    dark: { primary: '#f43f5e', hover: '#fb7185', link: '#fda4af' }, light: { primary: '#be123c', hover: '#9f1239', link: '#be123c' } },
+  { id: 'red', name: 'Red',
+    dark: { primary: '#ef4444', hover: '#f87171', link: '#fca5a5' }, light: { primary: '#b91c1c', hover: '#991b1b', link: '#b91c1c' } },
+  { id: 'orange', name: 'Orange',
+    dark: { primary: '#f97316', hover: '#fb923c', link: '#fdba74' }, light: { primary: '#c2410c', hover: '#9a3412', link: '#9a3412' } },
+  { id: 'amber', name: 'Amber',
+    dark: { primary: '#f59e0b', hover: '#fbbf24', link: '#fcd34d' }, light: { primary: '#b45309', hover: '#92400e', link: '#92400e' } },
+  { id: 'lime', name: 'Lime',
+    dark: { primary: '#84cc16', hover: '#a3e635', link: '#bef264' }, light: { primary: '#4d7c0f', hover: '#3f6212', link: '#3f6212' } },
+  { id: 'green', name: 'Green',
+    dark: { primary: '#22c55e', hover: '#4ade80', link: '#86efac' }, light: { primary: '#15803d', hover: '#166534', link: '#166534' } },
+  { id: 'cyan', name: 'Cyan',
+    dark: { primary: '#06b6d4', hover: '#22d3ee', link: '#67e8f9' }, light: { primary: '#0e7490', hover: '#155e75', link: '#0e7490' } },
+  { id: 'graphite', name: 'Graphite', aliases: ['slate', 'gray'],
+    dark: { primary: '#94a3b8', hover: '#cbd5e1', link: '#cbd5e1' }, light: { primary: '#334155', hover: '#1e293b', link: '#334155' } },
+];

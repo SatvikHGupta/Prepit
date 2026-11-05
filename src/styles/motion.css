@@ -1,0 +1,46 @@
+/* Motion: short, ease-out, and only on transform and opacity. Everything here is switched off by prefers-reduced-motion (base.css). */
+html { scroll-behavior: smooth; }
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes menu-in { from { opacity: 0; transform: translateY(-4px) scale(0.98); } }
+@keyframes sheet-in { from { transform: translateY(24px); opacity: 0; } }
+@keyframes grow { from { transform: scaleX(0); } }
+@keyframes pop { 40% { transform: scale(1.25); } }
+@keyframes shimmer { to { background-position: -200% 0; } }
+.page, .hero { animation: fade-in 280ms var(--ease) both; }
+
+/* press feedback on every button-like thing */
+.btn, .icon-btn, .dd-trigger, .bookmark-btn, .chip, .seg button { transition-property: background-color, border-color, color, transform, box-shadow; transition-duration: 140ms; transition-timing-function: var(--ease); }
+.btn:active:not(:disabled), .icon-btn:active, .dd-trigger:active, .bookmark-btn:active, a.chip:active, button.chip:active { transform: translateY(1px) scale(0.98); }
+.btn-primary:hover:not(:disabled) { box-shadow: 0 6px 16px -8px rgba(var(--accent-rgb), 0.9); }
+.btn svg, .icon-btn svg { transition: transform 200ms var(--ease); }
+.btn:hover svg { transform: translateX(1px); }
+.icon-btn:hover svg { transform: scale(1.08); }
+.bookmark-btn[aria-pressed='true'] svg { animation: pop 340ms var(--ease); }
+.dd-menu { animation: menu-in 150ms var(--ease); transform-origin: top left; }
+.dd-menu.right { transform-origin: top right; }
+@media (max-width: 640px) { .dd-menu { animation: sheet-in 220ms var(--ease); } .dd-backdrop { animation: fade-in 200ms ease-out; } }
+.dd-box { transition: background-color 140ms var(--ease), border-color 140ms var(--ease); }
+.dd-box svg { animation: pop 220ms var(--ease); }
+.choice, .swatch { transition-property: border-color, background-color, transform; transition-duration: 160ms; }
+.choice:active { transform: scale(0.985); }
+.card-hover, .rcard, .role-feature { transition: border-color var(--ease), transform var(--ease), box-shadow var(--ease); }
+.rcard:hover, .role-feature:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.result, .rt-row, .prow, .index a, .topic-row, .role-row, .ledger-rank a { transition: background-color var(--ease); }
+.toc a { transition: color var(--ease), border-color var(--ease); }
+.toc a[aria-current='location'] { color: var(--accent-link); border-left-color: var(--accent); font-weight: 650; }
+details.reveal > .inner { animation: fade-in 200ms var(--ease); }
+
+/* top progress bar while a page loads */
+.navbar { position: fixed; inset: 0 0 auto 0; height: 2px; z-index: var(--z-sheet); background: var(--accent); transform-origin: left; transform: scaleX(0); opacity: 0; pointer-events: none; }
+.navbar[data-state='loading'] { opacity: 1; transform: scaleX(0.85); transition: transform 9s cubic-bezier(0.1, 0.7, 0.2, 1), opacity 80ms; }
+.navbar[data-state='done'] { opacity: 0; transform: scaleX(1); transition: transform 180ms ease-out, opacity 240ms 140ms; }
+
+/* loading screens */
+.sk { border-radius: var(--radius); background: linear-gradient(90deg, var(--surface-2) 30%, var(--surface-hover) 50%, var(--surface-2) 70%); background-size: 200% 100%; animation: shimmer 1.5s linear infinite; }
+.sk-title { height: 46px; width: min(340px, 70%); margin-bottom: 16px; }
+.sk-line { height: 18px; margin-bottom: 36px; }
+.sk-rows { display: grid; gap: 10px; margin-top: 8px; }
+.sk-row { height: 58px; }
+.sk-facts { display: flex; gap: 44px; margin: 8px 0 34px; padding: 20px 0; border-top: 1px solid var(--border-strong); border-bottom: 1px solid var(--border-strong); }
+.sk-fact { width: 90px; height: 48px; }
+.sk-panel { height: 300px; }

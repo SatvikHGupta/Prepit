@@ -1,0 +1,24 @@
+# Whitelist: everything is ignored except what the site needs to build and run.
+# (data, secrets, node_modules, .next, tests, docs, deploy and tooling scripts are all ignored on purpose)
+*
+
+!.gitignore
+!package.json
+!package-lock.json
+!.nvmrc
+!next.config.mjs
+!jsconfig.json
+!README.md
+
+# the site itself
+!src/
+!src/**
+
+# predev and prebuild copy the KaTeX assets with this script
+!scripts/
+!scripts/copy-katex.mjs
+
+# static files, except the generated KaTeX copy
+!public/
+!public/**
+public/vendor/

@@ -1,0 +1,17 @@
+pre.code { margin: 0 0 1em; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow-x: auto; font-size: 0.88rem; line-height: 1.6; color: var(--sh-foreground); tab-size: 4; }
+pre.code code { background: none; border: 0; padding: 0; font-size: inherit; }
+pre.code .k { color: var(--sh-token-keyword); }
+pre.code .f { color: var(--sh-token-function); }
+pre.code .c { color: var(--sh-token-constant); }
+pre.code .s { color: var(--sh-token-string); }
+pre.code .m { color: var(--sh-token-comment); font-style: italic; }
+pre.code .p { color: var(--sh-token-parameter); }
+pre.code .u { color: var(--sh-token-punctuation); }
+pre.code .l { color: var(--sh-token-link); }
+.diff { padding: 0; }
+.diff .ln { display: block; padding: 0 16px; white-space: pre; }
+.diff .ln::before { content: attr(data-t); display: inline-block; width: 1.6em; color: var(--text-muted); user-select: none; }
+.diff .add { background: var(--easy-soft); }
+.diff .del { background: var(--hard-soft); }
+.katex { font-size: 1.04em; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 2px 0; }

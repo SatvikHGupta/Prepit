@@ -1,0 +1,50 @@
+.search-head { margin-bottom: 22px; }
+.search-head h1 { font-size: clamp(1.9rem, 1.3rem + 2vw, 2.7rem); margin-bottom: 0.25em; }
+.search-head .lead { margin: 0; }
+.filterbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 14px; }
+.filterbar .seg { margin-right: 6px; }
+.active { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+.entity-hits { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; margin-top: 16px; font-size: 0.93rem; }
+.entity-hits > span { color: var(--text-muted); }
+.did-you-mean { margin: 14px 0 0; font-size: 0.95rem; }
+.resultsbar { position: sticky; top: var(--header-h); z-index: var(--z-sticky); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-top: 22px; padding: 10px 0; background: var(--bg); border-bottom: 1px solid var(--border-strong); }
+.resultsbar .count { font-weight: 700; }
+.resultsbar .count span { color: var(--text-muted); font-weight: 500; }
+.resultsbar .ctl { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.resultsbar .dd-trigger { min-height: 36px; }
+.resultsbar .seg button { min-height: 30px; }
+@media (max-width: 640px) { .resultsbar { position: static; } .resultsbar .seg button span { display: none; } }
+
+/* three ways to read the same results */
+.res-list { margin-top: 4px; }
+.result { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border); }
+.result .body { flex: 1; min-width: 0; }
+.result a.title { color: var(--text); font-weight: 650; font-size: 1.06rem; text-decoration: none; line-height: 1.35; }
+.result a.title:hover { color: var(--accent-link); text-decoration: underline; }
+.result .line { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; margin-top: 8px; }
+.result .tagline { margin-top: 7px; font-size: 0.85rem; color: var(--text-muted); }
+.res-table { margin-top: 4px; }
+.rt-head, .rt-row { display: grid; grid-template-columns: minmax(0, 1fr) 84px 170px 160px 38px; gap: 14px; align-items: center; }
+.rt-head { padding: 9px 0; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+.rt-row { padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; min-height: 46px; }
+.rt-row a { color: var(--text); font-weight: 600; text-decoration: none; line-height: 1.35; }
+.rt-row a:hover { color: var(--accent-link); text-decoration: underline; }
+.rt-row .cell { color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 900px) { .rt-head, .rt-row { grid-template-columns: minmax(0, 1fr) 84px 38px; } .rt-head .hide-sm, .rt-row .hide-sm { display: none; } }
+.res-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; margin-top: 18px; }
+.rcard { display: flex; flex-direction: column; gap: 10px; padding: 16px; background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius); transition: border-color var(--ease); }
+.rcard:hover { border-color: var(--accent); }
+.rcard a.title { color: var(--text); font-weight: 650; font-size: 1.02rem; line-height: 1.35; text-decoration: none; }
+.rcard a.title:hover { color: var(--accent-link); text-decoration: underline; }
+.rcard .tagline { font-size: 0.84rem; color: var(--text-muted); flex: 1; }
+.rcard .foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.group-h { display: flex; align-items: baseline; gap: 12px; margin: 30px 0 4px; padding-bottom: 8px; border-bottom: 1px solid var(--border-strong); }
+.group-h h2 { margin: 0; font-size: 1.35rem; }
+.group-h span { color: var(--text-muted); font-size: 0.88rem; }
+.res-cards + .group-h { margin-top: 36px; }
+.bookmark-btn { flex: none; width: 36px; height: 36px; border-radius: var(--radius); border: 1px solid var(--border); background: transparent; display: inline-flex; align-items: center; justify-content: center; color: var(--text-muted); transition: background-color var(--ease), color var(--ease), border-color var(--ease); }
+.bookmark-btn:hover { border-color: var(--accent); color: var(--accent-link); }
+.bookmark-btn[aria-pressed='true'] { background: var(--accent-subtle); color: var(--accent-link); border-color: var(--accent); }
+.bookmark-btn svg { width: 17px; height: 17px; }
+.skeleton { height: 62px; margin: 10px 0; border-radius: var(--radius); background: var(--surface-2); }
+@media (prefers-reduced-motion: no-preference) { .skeleton { animation: pulse 1.4s ease-in-out infinite; } @keyframes pulse { 50% { opacity: 0.5; } } }
